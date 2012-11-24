@@ -107,6 +107,47 @@ public class MainTest {
     assertEquals(100, findBase10(Long.valueOf("125")));
   }
 
+  @Test
+  public void testPermutationByValue()
+  {
+    for (long i = 1; i < 10; i++) {
+      assertEquals(i, (long)Main.determinePermutationsFor(i));
+    }
+    
+    assertEquals(10, (long)Main.determinePermutationsFor(10L));
+    assertEquals(10, (long)Main.determinePermutationsFor(11L));
+    assertEquals(11, (long)Main.determinePermutationsFor(12L));
+    assertEquals(12, (long)Main.determinePermutationsFor(13L));
+    assertEquals(18, (long)Main.determinePermutationsFor(19L));
+    
+//    assertEquals(21, (long)Main.determinePermutationsFor(21L));
+//    assertEquals(21, (long)Main.determinePermutationsFor(22L));
+//    assertEquals(22, (long)Main.determinePermutationsFor(23L));
+    
+//    assertEquals(47, (long)Main.determinePermutationsFor(50L));
+    
+//    assertEquals(30, (long)Main.determinePermutationsFor(33L));
+    
+//    assertEquals(80, (long)Main.determinePermutationsFor(83L));
+    
+    assertEquals(90, (long)Main.determinePermutationsFor(99L));
+    assertEquals(90, (long)Main.determinePermutationsFor(100L));
+    assertEquals(90, (long)Main.determinePermutationsFor(101L));
+    assertEquals(91, (long)Main.determinePermutationsFor(102L));
+  }
+  
+  @Test
+  public void testPermutationByLength()
+  {
+    assertEquals(9, Main.determinePermutationsUpTo(1));
+    assertEquals(90, Main.determinePermutationsUpTo(2));
+    assertEquals(657, Main.determinePermutationsUpTo(3));
+    assertEquals(4059, Main.determinePermutationsUpTo(4));
+    
+    assertEquals((9*9*8*7*6*5*4*3*2*1), Main.determinePermutationsUpTo(12));
+  }
+  
+  
   private int factorial(int length) {
     if(1 == length)
       return 1;
