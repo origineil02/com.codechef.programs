@@ -12,17 +12,6 @@ import static org.junit.Assert.*;
 public class MainTest {
 
 //  @Test
-  public void test1() {
-    
-    for (Integer i = 1; i < 100; i++) {
-
-      System.out.println("target " + i);
-      
-      
-      System.out.println(" 9 x " + i.toString().length() + "! =" + (9*factorial(i.toString().length())));
-    }
-  }
-//  @Test
   public void test() {
     final String[] regexs = new String[]{"[1-9]{1}",
 //                                         "[1-9]0{1}[^0]*",
@@ -98,14 +87,6 @@ public class MainTest {
     Main.main(args);
 
   }
-  
-  @Test
-  public void baseTest()
-  {
-    assertEquals(1, findBase10(Long.valueOf("1")));
-    assertEquals(10, findBase10(Long.valueOf("15")));
-    assertEquals(100, findBase10(Long.valueOf("125")));
-  }
 
   @Test
   public void testPermutationByValue()
@@ -145,24 +126,5 @@ public class MainTest {
     assertEquals(4059, Main.determinePermutationsUpTo(4));
     
     assertEquals((9*9*8*7*6*5*4*3*2*1), Main.determinePermutationsUpTo(12));
-  }
-  
-  
-  private int factorial(int length) {
-    if(1 == length)
-      return 1;
-    
-    return length * factorial(--length);
-  }
-  
-  private long findPermutation(Long value)
-  {
-//    git@github.com:origineil02/com.codechef.programs.git
-    return value; 
-  }
-  
-  private long findBase10(Long value)
-  {
-    return (long)Math.pow(10, value.toString().length()-1);
   }
 }
