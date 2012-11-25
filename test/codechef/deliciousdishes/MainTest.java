@@ -117,14 +117,4 @@ public class MainTest {
     assertEquals(91, (long)Main.determinePermutationsFor(102L));
   }
   
-  @Test
-  public void testPermutationByLength()
-  {
-    assertEquals(9, Main.determinePermutationsUpTo(1));
-    assertEquals(90, Main.determinePermutationsUpTo(2));
-    assertEquals(657, Main.determinePermutationsUpTo(3));
-    assertEquals(4059, Main.determinePermutationsUpTo(4));
-    
-    assertEquals((9*9*8*7*6*5*4*3*2*1), Main.determinePermutationsUpTo(12));
-  }
 }
