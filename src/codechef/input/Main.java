@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.math.BigInteger;
 
 public class Main {
 
@@ -16,17 +15,16 @@ public class Main {
     final BufferedReader in = new BufferedReader(new InputStreamReader(stream));
     final String[] tokens = in.readLine().split(" ");
     
-    final BigInteger inputCount = new BigInteger(tokens[0]);
-    final BigInteger divisor = new BigInteger(tokens[1]);
+    final int inputCount = Integer.parseInt(tokens[0]);
+    final int divisor = Integer.parseInt(tokens[1]);
     
-    BigInteger number = BigInteger.ZERO;
     int divisibleCount = 0;
-    for (BigInteger i = BigInteger.ZERO; i.compareTo(inputCount) < 0; i = i.add(BigInteger.ONE)) {
-      number = new BigInteger(in.readLine());
+    for (int i = 0; i < inputCount; ++i) {
       
-      if(number.remainder(divisor).compareTo(BigInteger.ZERO) == 0)
+      final int value = Integer.parseInt(in.readLine());
+      if( value % divisor == 0)
       {
-        divisibleCount++;
+        ++divisibleCount;
       }
     }
     
