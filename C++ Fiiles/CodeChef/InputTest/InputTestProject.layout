@@ -1,0 +1,17 @@
+[Editors]
+Order=0,-1
+Focused=0
+[Editor_1]
+CursorCol=1
+CursorRow=1
+TopLine=1
+LeftChar=1
+Open=0
+Top=0
+[Editor_0]
+Open=1
+Top=1
+CursorCol=15
+CursorRow=45
+TopLine=9
+LeftChar=1
