@@ -24,7 +24,7 @@ public class Main {
     }
   }
 
-  public static BigInteger factorial(Integer value) {z
+  public static BigInteger factorial(Integer value) {
 
     BigInteger result = ONE;
     while (value != 1) {
