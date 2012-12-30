@@ -1,15 +1,13 @@
-linesToRead = gets
-array = linesToRead.split(/ /);
+array = gets.split(/ /).map(&:to_i);
 
 count = 0;
-for i in 0..array.first.to_i - 1
+linesToRead = array.first - 1
+divisor = array.last 
 
-  result = gets.to_i % array.last.to_i;
-
-  if result == 0
-    count+=1;
+ARGF.each{|line|
+  if line.to_i % divisor == 0
+   count += 1 
   end
-
-end
+}
 
 puts count
