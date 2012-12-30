@@ -1,10 +1,9 @@
 my($linesToRead, $divisor) = split(/ /, <>);
 
 $count = 0;
-for($line = 0; $line < $linesToRead; ++$line)
+for(0..$linesToRead - 1)
 {
-  $currentValue = <>;
-  if($currentValue % $divisor == 0)
+  if(<> % $divisor == 0)
   {   
     ++$count;  
   }
