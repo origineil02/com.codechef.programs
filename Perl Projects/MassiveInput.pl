@@ -1,3 +1,4 @@
+use integer;
 my($linesToRead, $divisor) = split(/ /, <>);
 
 $count = 0;
