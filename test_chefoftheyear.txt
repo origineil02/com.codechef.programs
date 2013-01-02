@@ -1,5 +1,10 @@
-2 2
-Newton England
-Euclid Greece
-Newton
-Euclid
+4 5
+Ramanujan India
+Torricelli Italy
+Gauss Germany
+Lagrange Italy
+Torricelli
+Ramanujan
+Torricelli
+Ramanujan
+Lagrange
