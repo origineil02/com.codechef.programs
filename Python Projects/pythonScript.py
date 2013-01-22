@@ -1,8 +1,43 @@
 import subprocess
 import sys
 
-COMMAND="'uname -s; uname -r; uname -m; uname -p; uname -v'"
+def func_addDataElement(currentNode, dataValue, ipAddress, childrenTag):
+   node = {}
+   children = currentNode["Next"]
+ 
+   if dataValue not in children :
+      list = []
+      link = {}
+      list.append(ipAddress)
+      node["IPs"] = list
+      node["Next"] = link
+      node["Tag"] = childrenTag
+      children[dataValue] = node
+   else :
+      node = children[dataValue]
+      node["IPs"].append(ipAddress)
+
+   return node
+
+def func_printData(node):
+
+    children = node["Next"]
+    print "Found " + str(len(children)) + " different " + node["Tag"] 
+  
+    for child in children:
+      print child 
+      if len(node["Next"][child]["Next"]) > 0: 
+          print " containing "
+          func_printData(node["Next"][child])
+  
+  
+
+COMMAND="'uname -s; uname -r; uname -m; uname -p;'"
 result = []
+ipAddressToData = {}
+head = {}
+head["Next"] = {}
+head["Tag"] = "Operating System / Distribution Name"
 
 for i in sys.stdin:
   HOST=i
@@ -41,4 +76,21 @@ for i in sys.stdin:
       error = ssh.stderr.readlines()
       print >>sys.stderr, "ERROR: %s" % error
   else:
-      print result
+    ipAddress = i.rstrip("\n");
+    ipAddressToData[ipAddress] = result;
+    
+    distro = result[0].rstrip("\n");
+    node = func_addDataElement(head, distro, ipAddress, "Version")
+    
+    version = result[1].rstrip("\n");
+    node = func_addDataElement(node, version, ipAddress, "Hardware Name")
+
+    hardwareName = result[2].rstrip("\n");
+    node = func_addDataElement(node, hardwareName, ipAddress, "Architecture")
+
+    arch = result[3].rstrip("\n");
+    node = func_addDataElement(node, arch, ipAddress, "")
+
+
+func_printData(head)
+
