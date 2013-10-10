@@ -1,5 +1,6 @@
 package codechef.deliciousdishes;
 
+import codechef.challenge.deliciousdishes.Main;
 import java.math.BigInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -1,4 +1,4 @@
-package codechef.deliciousdishes;
+package codechef.challenge.deliciousdishes;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

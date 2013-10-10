@@ -1,4 +1,4 @@
-package codechef.chefoftheyear;
+package codechef.challenge.chefoftheyear;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

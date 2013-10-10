@@ -1,4 +1,4 @@
-package codechef.smallfactorial;
+package codechef.challenge.smallfactorial;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

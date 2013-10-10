@@ -1,4 +1,4 @@
-package codechef.factorial;
+package codechef.challenge.factorial;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

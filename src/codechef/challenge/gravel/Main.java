@@ -1,4 +1,4 @@
-package codechef.gravel;
+package codechef.challenge.gravel;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
